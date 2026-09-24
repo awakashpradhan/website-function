@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+
+<body>
+    <h3>HELLO AND WELCOME TO API</h3>
+
+    <p id="demo">Hello new</p>
+    <input id="first" type="text" placeholder="Enter your Name">
+    <input id="second" type="password" placeholder="Enter your Password">
+
+    <button onclick="getUser()">Get User</button>
+    <button onclick="createUser()">Create User</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+        async function createUser() {
+            let first = document.getElementById("first");
+            let second = document.getElementById("second");
+            let trial = document.getElementById("demo");
+
+            let val1 = first.value; // Name input
+            let val2 = second.value; // Email input
+
+            try {
+                //FOR POST METHOD
+                const response = await axios.post(
+                    "https://dummyjson.com/auth/login",
+                    {
+                        username: val1,
+                        password: val2
+                    }
+                );
+                localStorage.setItem("user", JSON.stringify(response.data));
+
+                trial.innerText = `Name: ${response.data.firstName}, Email: ${response.data.email}, User id: ${response.data.id}`;
+                console.log("Created:", response.data);
+                
+
+            } catch (error) {
+                console.log("Error:", error);
+                trial.innerText = "Error creating user.";
+            }
+        }
+        const user = localStorage.getItem("user")
+        const user1 = JSON.parse(user);
+
+        console.log("user1:",user);
+        //FOR GET METHOD
+        async function getUser() {
+            let trial = document.getElementById("demo");
+
+            try {
+                const response = await axios.get(
+                    "https://dummyjson.com/auth/login "
+                )
+
+                // trial.innerText = ` - User Name: ${response.data.name}, Email: ${response.data.email}`;
+
+            } catch (error) {
+                console.log("Error:", error);
+                trial.innerText = "Error fetching user.";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+</head>
+
+<body>
+
+    <p>Hello new</p>
+
+    <button onclick="getUser()">Click me</button>
+
+    <!-- Load Axios first -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+
+        async function createUser() {
+
+    const user = {
+        name: "Awakash",
+        email: "awakash@example.com"
+    };
+
+    try {
+        const response = await axios.post(
+            "https://jsonplaceholder.typicode.com/users",
+            user
+        );
+
+        console.log(response.data);
+
+    } catch (error) {
+        console.log("Error:", error);
+    }
+}
+
+createUser();
+
+    </script>
+
+</body>
+
+</html>

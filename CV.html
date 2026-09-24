@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Starting</title>
+</head>
+<style>
+    .main{
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
+        align-items: center;
+    }
+    .container{
+        display: flex;
+        /* background-color: gray; */
+        width: 100%;
+        /* flex-direction: row; */
+    }
+    .left{
+        flex: 20%;
+        background-color: lightblue;
+        padding: 10px;
+        border: 1px solid black;
+        margin: 10px;
+    }
+    /* .right{
+        flex: 80%;
+        background-color: rgb(155, 155, 212);
+        padding: 10px;
+        display: inline;
+        border: 1px solid black;
+        flex-direction: column; */
+    /* } */
+    .additional{
+        display: flex;
+        flex-direction: column;
+        background-color: lightblue;
+        margin: 10px;
+        border: 1px solid black;
+    }
+    .heading{
+        color: rgb(225, 39, 39);
+        justify-content: center;
+        align-items: center;
+    }
+
+</style>
+
+<body>
+
+    <!-- <div class="flex-container">
+        <div class="col-80">80% Column</div>
+        <div class="col-20">20% Column</div>
+    </div> -->
+
+
+    <div class="main">
+    <div id="title" class="center">
+        <h1 class="heading">Awakash Pradhan</h1>
+    </div>
+    <div id="address" class="center">
+        <span>Selimbong T.E Dakman Dara, Pokhriabong, Darjeeling</span>
+        <span>Phone: +91 8101853608</span>
+        <span>Email: awakaspradhan@gmail.com</span>
+    </div>
+    <div class="container">
+    <div id="main" class="left">
+        <div id="summary">
+            <h2 class="heading">Summary</h2>
+            <p>Electrical Engineer with hands-on experience in electrical estimation, high-voltage transmission line
+                quality control, site supervision, and preventive maintenance. Proven track record in preparing Bills of
+                Quantities (BOQ), conducting load calculations, maintaining site safety compliance, and managing daily
+                engineering documentation, Skilled in utilizing AutoCAD Electrical and solar PV installation practices
+                to optimize power system execution and ensure adherence to quality and environmental standards.</p>
+        </div>
+    </div>
+    <div class="additional">
+        <div id="experties" class="right">
+            <h2 class="heading">Expertise</h2>
+            <ul>
+                <li id="bold" style="font-weight: bold;">Electrical Engineering & Design: <span
+                        style="font-weight: normal;">Load Calculations, Load Surveying, AutoCAD (Electrical &
+                        Electronics), Single Line Diagrams (SLD).</span> </li>
+
+                <li style="font-weight: bold;">Project & Quality Execution: <span style="font-weight: normal;">BOQ
+                        Preparation, Quantity Surveying, Quality Control (QC/QA), Site Supervision, Contractor & Labor
+                        Management.</span> </li>
+                <li style="font-weight: bold;">Tools & Software: <span style="font-weight: normal;">AutoCAD Electrical,
+                        Solar PV Design/Installer Frameworks, MS Excel (Data & Load Analysis), MS Word, MS
+                        PowerPoint.</span></li>
+                <li style="font-weight: bold;">Compliance & Safety: <span style="font-weight: normal;">Safety, Health,
+                        and Environment (SHE) Standards, Pour Cards, Quality Checklists, Field Test Reports.</span></li>
+            </ul>
+        </div>
+    
+    <div id="experience" class="right">
+        <h2 id="exphead" class="heading"> Professional Experience</h2>
+        <ul>
+            <li class="exp" style="font-weight: bold;">DARJEELING ELECTRICAL ENGINEERING DIVISION (Power Dept.) |
+                Darjeeling, West Bengal
+                Sub-Assistant Engineer | July 2025 – July 2026 </li>
+                <div class="sub-exp">
+                    <ul>
+                        <li>Supported the execution and on-site supervision of public power distribution and engineering
+                            projects across the Municipality and Blocks. </li>
+                        <li>Conducted load calculations, prepared Bills of Quantities (BOQ), and performed quality
+                            control checks to ensure compliance with project specifications and safety standards.</li>
+                        <li>Coordinated communication between senior engineers, contractors, and field teams to maintain
+                            project timelines and quality standards. </li>
+                    </ul>
+                </div>
+                <br>
+                <div class="sub-exp">
+                <li>PLR PROJECTS PVT. LTD. | Seppa, Arunachal Pradesh
+                    Quality Engineer | January 2024 – December 2024
+                    <div class="sub-exp">
+                        <ul>
+                            <li>Managed Quality Assurance/Quality Control (QA/QC) operations for the 132 kV (S/C) Seppa
+                                to Rilloh Transmission Line Project. </li>
+                            <li>Enforced strict compliance with safety, environmental, and engineering standards on-site
+                            </li>
+                            <li>Conducted continuous site inspections and verified pour cards, quality checklists, and
+                                material test reports prior to execution. </li>
+                        </ul>
+                        </div>
+                    </div>
+                </li>
+        </ul>
+        <div class="languages">
+            <h2 class="heading">Languages</h2>
+            <ul>
+                <li>English</li>
+                <li>Hindi</li>
+                <li>Bengali</li>
+                <li>Nepali</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+
+
+
+<script>
+    // variables let, const, var
+    let a = "awakash pradhan";
+    // console.log(a);
+    a = 23; // we can reassign a variable with the same name in the same scope when using 'let'
+    // let a = 55;  we cannot redeclare a variable with the same name in the same scope when using 'let'
+
+    console.log(a);
+
+    const b = "pradhan"; 
+    // b= "awakash"; // This will throw an error because 'b' is a constant and cannot be reassigned
+    console.log(b);
+
+    var c = "hello"; // 'var' is function-scoped and can be redeclared and reassigned
+    c = "world"; // we can reassign a variable with the same name in the same scope when using 'var'
+    var c = "Please say hello"; // we can redeclare a variable with the same name
+    console.log(c);
+
+    //functions
+    function greet(a , b) {
+        return a + b;
+    }
+    console.log(greet(5,110));
+
+    function calname(name = "guest"){
+        return "hello " + name;
+    }
+    console.log(calname("awakash"));
+    console.log(calname());
+
+    function anon(){
+        return "your computer is hacked";
+    }
+    console.log(anon());
+    //arrow function
+    const sayhello = (name) => {
+        return "hello " + name;
+    }
+    console.log(sayhello("awakash"));
+
+    const sum = (a,b) => {
+        return a+b;
+    };
+    console.log(sum(5,11));
+
+    const greets = (name = "guest") => {
+        return ("hello " + name)
+    }
+    console.log(greets("awakash"));
+</script>
+</body>
+
+</html>

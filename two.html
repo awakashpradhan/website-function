@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+
+<body>
+
+    <div class="main">
+        <div id="content">
+            <h2 id="head">PRODUCTS</h2>
+            <p id="par">Product details</p>
+            <!-- <img id="img" src="" alt="product image"> -->
+            <img id="img" src="" alt="product image">
+        </div>
+        <button onclick="product1()">Product 1</button>
+        <button onclick="product2()">Product 2</button>
+        <button onclick="product3()">Product 3</button>
+        <button onclick="product4()">Product 4</button>
+        <button onclick="product5()">Product 5</button>
+        <button onclick="product6()">Product 6</button>
+        <button onclick="product7()">Product 7</button>
+        <button onclick="product8()">Product 8</button>
+    </div>
+
+    <div id="demo"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+
+        // Get all products from API
+        async function getProducts() {
+
+            try {
+
+                const response = await axios.get(
+                    "https://dummyjson.com/products"
+                );
+
+                // console.log(response.data);
+
+                // Store API data in Local Storage
+                localStorage.setItem(
+                    "products",
+                    JSON.stringify(response.data)
+                );
+
+            } catch (error) {
+
+                console.log("Error:", error);
+
+            }
+        }
+
+
+        // Automatically call API when page loads
+        getProducts();
+
+
+        // Product 1
+        function product1() {
+            let head = document.getElementById("head");
+            let par = document.getElementById("par");
+            let img = document.getElementById("img");
+
+            const products = localStorage.getItem("products");
+
+            const result = JSON.parse(products);
+
+            result.products.map(product => {
+
+                if (product.id === 1) {
+                    // console.log(product);
+                    head.innerText = product.title;
+                    par.innerText = `The price of the product is ${product.price}, Rating ${product.rating}`
+                    img.src = product.thumbnail;
+                    img.alt = product.title;
+                    // console.log(i)
+                }
+
+
+            });
+        }
+
+
+        // Product 2
+        function product2() {
+            let head = document.getElementById("head");
+            let par =  document.getElementById("par");
+            let img = document.getElementById("img");
+
+            const result = JSON.parse(
+                localStorage.getItem("products")
+            );
+
+            result.products.map(product => {
+
+                if (product.id === 2) {
+                    // console.log(product.price);
+                    head.innerText = product.title;
+                    par.innerText = `The price of the Product is ${product.price}, Rating ${product.rating}`
+                    img.src = product.thumbnail;
+                    img.alt = product.title;
+                }
+
+            });
+        }
+
+
+        // Product 3
+        function product3() {
+            showProduct(3)
+        }
+
+
+        function product4() {
+            showProduct(4);
+        }
+
+        function product5() {
+            showProduct(5);
+        }
+
+        function product6() {
+            showProduct(6);
+        }
+
+        function product7() {
+            showProduct(7);
+        }
+
+        function product8() {
+            showProduct(8);
+        }
+
+
+        // Reusable function
+        function showProduct(id) {
+            let head = document.getElementById("head");
+            let par = document.getElementById("par");
+            let img = document.getElementById("img");
+
+            const result = JSON.parse(
+                localStorage.getItem("products")
+            );
+
+            const product = result.products.find(
+                product => product.id === id
+            );
+            head.innerText = product.title;
+            par.innerText = `The price of the product is ${product.price}, rating ${product.rating}`;
+            img.src = product.thumbnail;
+                    img.alt = product.title;
+            console.log(product);
+            // console.log(a)
+        }
+
+    </script>
+
+</body>
+
+</html>
